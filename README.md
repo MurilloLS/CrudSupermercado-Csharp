@@ -1,5 +1,5 @@
 <h1 align="center">
-    Projeto CRUD - Gerenciando Supermercado com C# e SQLServer🚢
+    Projeto CRUD - Gerenciando Supermercado com C# e SQLServer🍉🍎
 </h1>
  
 

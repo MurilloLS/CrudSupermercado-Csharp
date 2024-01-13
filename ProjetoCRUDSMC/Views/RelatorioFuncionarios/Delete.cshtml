@@ -1,0 +1,125 @@
+﻿@model ProjetoCRUDSMC.Models.RelatorioFuncionario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3 {
+        color: #3498db;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    dt {
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    dd {
+        border: 1px solid #3498db;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .btn-danger,
+    .btn-secondary {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+
+<header>
+    <h1>Supermercado SMC</h1>
+</header>
+
+<main>
+    <h2>Deletar</h2>
+
+    <h3 style="color:red">Você tem certeza disso?</h3>
+
+    <div>
+        <hr />
+        <dl>
+            <dt>@Html.DisplayNameFor(model => model.FuncionarioId)</dt>
+            <dd>@Html.DisplayFor(model => model.FuncionarioId)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.DataRelatorio)</dt>
+            <dd>@Html.DisplayFor(model => model.DataRelatorio)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Relatorio)</dt>
+            <dd>@Html.DisplayFor(model => model.Relatorio)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+            <a role="button" class="btn btn-secondary" asp-action="Index">Voltar</a>
+        </form>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Supermercado SMC. Todos os direitos reservados.
+</footer>

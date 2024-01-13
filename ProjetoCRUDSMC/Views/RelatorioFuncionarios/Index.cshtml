@@ -1,0 +1,131 @@
+﻿@model IEnumerable<ProjetoCRUDSMC.Models.RelatorioFuncionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3 {
+        color: #3498db;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    td {
+        border: 1px solid #ddd;
+        color: #3498db;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        color: blue;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<header>
+    <h1>Supermercado SMC</h1>
+</header>
+
+<main>
+    <h2>Relatórios</h2>
+
+    <p>
+        <a role="button" class="btn btn-primary" asp-action="Create">Novo</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FuncionarioId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataRelatorio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Relatorio)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FuncionarioId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataRelatorio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Relatorio)
+                    </td>
+                    <td>
+                        <a role="button" class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a role="button" class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a role="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    &copy; 2024 Supermercado SMC. Todos os direitos reservados.
+</footer>

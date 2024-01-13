@@ -1,0 +1,136 @@
+﻿@model ProjetoCRUDSMC.Models.Venda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3 {
+        color: #3498db;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    hr {
+        border: 1px solid #3498db;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<header>
+    <h1>Supermercado SMC</h1>
+</header>
+
+<main>
+    <h2>Novo</h2>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NomeProduto" class="control-label"></label>
+                    <input asp-for="NomeProduto" class="form-control" minlength="3" pattern="[A-Za-z]+" title="Somente letras são permitidas" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Preco" class="control-label"></label>
+                    <input asp-for="Preco" class="form-control" pattern="\d+" min="0" max="10000" title="Digite um número positivo" required/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Quantidade" class="control-label"></label>
+                    <input asp-for="Quantidade" class="form-control" min="1" required/>
+                </div>
+                <div class="form-group d-flex">
+                    <input type="submit" value="Criar" class="btn btn-primary" />
+                    <a role="button" class="btn btn-secondary" asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
+       
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 Supermercado SMC. Todos os direitos reservados.
+</footer>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

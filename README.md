@@ -37,7 +37,9 @@
 
 🏗️ **Entity Framework**: Para interagir com o banco de dados.
 
-🎨 **Bootstrap 5**: Para dar uma aparência mais profissional à interface.
+🍎 **JavaScript**: A linguagem para auxílio no Frontend.
+
+🎨 **HTML | CSS | Bootstrap 5**: Para dar uma aparência mais profissional à interface.
 
 
 
